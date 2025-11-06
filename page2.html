@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ريسان ERP - لوحة التحكم</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="dashboard-body">
+    <nav class="dashboard-nav">
+      <div class="nav-container">
+        <div class="nav-right">
+          <a href="./index.html" class="nav-logo">
+            <img src="./logo.png" alt="Risaan ERP Logo" class="nav-logo-icon"></>
+          </a>
+          <div class="nav-links">
+            <a href="#" class="nav-link active" data-icon="dashboard">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
+                <rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
+                <rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
+                <rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              لوحة التحكم
+            </a>
+            <a href="#" class="nav-link" data-icon="invoice">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M13 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V9L13 2Z" stroke="currentColor" stroke-width="2"/>
+                <path d="M13 2V9H20" stroke="currentColor" stroke-width="2"/>
+                <path d="M8 13H16M8 17H14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              الفواتير
+            </a>
+            <a href="#" class="nav-link" data-icon="expenses">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 6V18M6 12H18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              المصروفات
+            </a>
+            <a href="#" class="nav-link" data-icon="suppliers">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M20 8H4C2.9 8 2 8.9 2 10V20C2 21.1 2.9 22 4 22H20C21.1 22 22 21.1 22 20V10C22 8.9 21.1 8 20 8Z" stroke="currentColor" stroke-width="2"/>
+                <path d="M2 10L12 16L22 10" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+              الموردين
+            </a>
+            <a href="#" class="nav-link" data-icon="clients">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M4 20C4 16.13 7.58 13 12 13C16.42 13 20 16.13 20 20" stroke="currentColor" stroke-width="2"/>
+              </svg>
+              العملاء
+            </a>
+            <div class="nav-link-group">
+              <a href="#" class="nav-link" data-icon="reports">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                  <path d="M7 10H17M7 14H17M7 18H13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                التقارير
+              </a>
+              <div class="nav-dropdown">
+                <a href="#" class="dropdown-item">
+                  <span class="dropdown-icon">📊</span>
+                  <span class="dropdown-text">
+                    <span class="dropdown-title">التقارير المالية</span>
+                    <span class="dropdown-desc">عرض التقارير المالية والإيرادات</span>
+                  </span>
+                </a>
+                <a href="#" class="dropdown-item">
+                  <span class="dropdown-icon">📈</span>
+                  <span class="dropdown-text">
+                    <span class="dropdown-title">التحليلات</span>
+                    <span class="dropdown-desc">تحليل أداء الأنظمة والمبيعات</span>
+                  </span>
+                </a>
+                <a href="#" class="dropdown-item">
+                  <span class="dropdown-icon">📑</span>
+                  <span class="dropdown-text">
+                    <span class="dropdown-title">التقارير المخصصة</span>
+                    <span class="dropdown-desc">إنشاء تقارير حسب احتياجاتك</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <a href="#" class="nav-link" data-icon="settings">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                <path d="M12 1V4M12 20V23M4.22 4.22L6.34 6.34M17.66 17.66L19.78 19.78M1 12H4M20 12H23M4.22 19.78L6.34 17.66M17.66 6.34L19.78 4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              الإعدادات
+            </a>
+          </div>
+        </div>
+        <div class="nav-left">
+          <button class="nav-icon-btn" aria-label="البحث">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M13.5 13.5L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <button class="nav-icon-btn" aria-label="الإشعارات">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M10 5C7.79086 5 6 6.79086 6 9V12L4 14V15H16V14L14 12V9C14 6.79086 12.2091 5 10 5Z" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M8.5 15V16C8.5 17.1046 9.39543 18 10.5 18H9.5C10.6046 18 11.5 17.1046 11.5 16V15" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            <span class="notification-badge">3</span>
+          </button>
+          <div class="nav-user">
+            <img src="https://ui-avatars.com/api/?name=Ahmed+Ali&background=2563EB&color=fff&bold=true&size=128" alt="المستخدم" class="user-avatar">
+            <span class="user-name">أحمد علي</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="page-header">
+      <div class="page-header-container">
+        <div class="page-header-right">
+          <h1 class="page-title" id="systemTitle">نظام المحاسبة – لوحة التحكم</h1>
+          <p class="page-subtitle">آخر تحديث: اليوم، 10:30 ص</p>
+        </div>
+        <div class="page-header-left">
+          <button class="btn btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M3 6H15M6 3V6M12 3V6M3 9H15V15H3V9Z" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            فلترة
+          </button>
+          <button class="btn btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M9 3V15M9 15L5 11M9 15L13 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            تصدير
+          </button>
+          <button class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M9 3V15M3 9H15" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            إضافة جديد
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="dashboard-content">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon" style="background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M9 11L12 14L22 4" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M21 12V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5C3 3.89543 3.89543 3 5 3H16" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="stat-content">
+            <p class="stat-label">إجمالي الفواتير</p>
+            <h3 class="stat-value">1,248</h3>
+            <p class="stat-change positive">+12.5% من الشهر الماضي</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2V22M17 5H9.5C8.57174 5 7.6815 5.36875 7.02513 6.02513C6.36875 6.6815 6 7.57174 6 8.5C6 9.42826 6.36875 10.3185 7.02513 10.9749C7.6815 11.6313 8.57174 12 9.5 12H14.5C15.4283 12 16.3185 12.3687 16.9749 13.0251C17.6313 13.6815 18 14.5717 18 15.5C18 16.4283 17.6313 17.3185 16.9749 17.9749C16.3185 18.6313 15.4283 19 14.5 19H6" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="stat-content">
+            <p class="stat-label">إجمالي الإيرادات</p>
+            <h3 class="stat-value">524,750 ر.س</h3>
+            <p class="stat-change positive">+8.2% من الشهر الماضي</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 8V12L15 15" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="12" cy="12" r="9" stroke="white" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <div class="stat-content">
+            <p class="stat-label">الفواتير المعلقة</p>
+            <h3 class="stat-value">87</h3>
+            <p class="stat-change negative">-3.1% من الشهر الماضي</p>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon" style="background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M17 20H22V18C22 16.3431 20.6569 15 19 15C18.0444 15 17.1931 15.4468 16.6438 16.1429M17 20H7M17 20V18C17 17.3438 16.8736 16.717 16.6438 16.1429M7 20H2V18C2 16.3431 3.34315 15 5 15C5.95561 15 6.80686 15.4468 7.35625 16.1429M7 20V18C7 17.3438 7.12642 16.717 7.35625 16.1429M7.35625 16.1429C8.0935 14.301 9.89482 13 12 13C14.1052 13 15.9065 14.301 16.6438 16.1429M15 7C15 8.65685 13.6569 10 12 10C10.3431 10 9 8.65685 9 7C9 5.34315 10.3431 4 12 4C13.6569 4 15 5.34315 15 7ZM21 10C21 11.1046 20.1046 12 19 12C17.8954 12 17 11.1046 17 10C17 8.89543 17.8954 8 19 8C20.1046 8 21 8.89543 21 10ZM7 10C7 11.1046 6.10457 12 5 12C3.89543 12 3 11.1046 3 10C3 8.89543 3.89543 8 5 8C6.10457 8 7 8.89543 7 10Z" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="stat-content">
+            <p class="stat-label">العملاء النشطون</p>
+            <h3 class="stat-value">342</h3>
+            <p class="stat-change positive">+15.3% من الشهر الماضي</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-section">
+        <div class="table-header">
+          <h2 class="table-title">آخر الفواتير</h2>
+          <button class="btn-link">عرض الكل ←</button>
+        </div>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>رقم الفاتورة</th>
+                <th>العميل</th>
+                <th>التاريخ</th>
+                <th>المبلغ</th>
+                <th>الحالة</th>
+                <th>الإجراءات</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="invoice-number">#INV-2025-001</span></td>
+                <td>
+                  <div class="customer-info">
+                    <img src="https://ui-avatars.com/api/?name=Mohammed+Salem&background=2563EB&color=fff&size=64" alt="" class="customer-avatar">
+                    <span>محمد سالم</span>
+                  </div>
+                </td>
+                <td>2025-01-15</td>
+                <td><strong>15,250 ر.س</strong></td>
+                <td><span class="status-badge status-paid">مدفوع</span></td>
+                <td>
+                  <button class="action-btn">عرض</button>
+                  <button class="action-btn">تحميل</button>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="invoice-number">#INV-2025-002</span></td>
+                <td>
+                  <div class="customer-info">
+                    <img src="https://ui-avatars.com/api/?name=Fatima+Ahmed&background=8B5CF6&color=fff&size=64" alt="" class="customer-avatar">
+                    <span>فاطمة أحمد</span>
+                  </div>
+                </td>
+                <td>2025-01-14</td>
+                <td><strong>8,900 ر.س</strong></td>
+                <td><span class="status-badge status-pending">معلق</span></td>
+                <td>
+                  <button class="action-btn">عرض</button>
+                  <button class="action-btn">تحميل</button>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="invoice-number">#INV-2025-003</span></td>
+                <td>
+                  <div class="customer-info">
+                    <img src="https://ui-avatars.com/api/?name=Khalid+Omar&background=10B981&color=fff&size=64" alt="" class="customer-avatar">
+                    <span>خالد عمر</span>
+                  </div>
+                </td>
+                <td>2025-01-13</td>
+                <td><strong>22,100 ر.س</strong></td>
+                <td><span class="status-badge status-paid">مدفوع</span></td>
+                <td>
+                  <button class="action-btn">عرض</button>
+                  <button class="action-btn">تحميل</button>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="invoice-number">#INV-2025-004</span></td>
+                <td>
+                  <div class="customer-info">
+                    <img src="https://ui-avatars.com/api/?name=Sara+Hassan&background=F59E0B&color=fff&size=64" alt="" class="customer-avatar">
+                    <span>سارة حسن</span>
+                  </div>
+                </td>
+                <td>2025-01-12</td>
+                <td><strong>12,750 ر.س</strong></td>
+                <td><span class="status-badge status-overdue">متأخر</span></td>
+                <td>
+                  <button class="action-btn">عرض</button>
+                  <button class="action-btn">تحميل</button>
+                </td>
+              </tr>
+              <tr>
+                <td><span class="invoice-number">#INV-2025-005</span></td>
+                <td>
+                  <div class="customer-info">
+                    <img src="https://ui-avatars.com/api/?name=Abdullah+Yousef&background=06B6D4&color=fff&size=64" alt="" class="customer-avatar">
+                    <span>عبدالله يوسف</span>
+                  </div>
+                </td>
+                <td>2025-01-11</td>
+                <td><strong>19,500 ر.س</strong></td>
+                <td><span class="status-badge status-paid">مدفوع</span></td>
+                <td>
+                  <button class="action-btn">عرض</button>
+                  <button class="action-btn">تحميل</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <footer class="main-footer">
+      <p>© 2025 Risan ERP – جميع الحقوق محفوظة</p>
+    </footer>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>
