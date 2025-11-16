@@ -1,9 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
   const selectedSystem = localStorage.getItem('selectedSystem') || 'نظام المحاسبة';
   const systemTitleElement = document.getElementById('systemTitle');
+  const currentSystemName = document.getElementById('currentSystemName');
 
   if (systemTitleElement) {
     systemTitleElement.textContent = `${selectedSystem} – لوحة التحكم`;
+  }
+
+  if (currentSystemName) {
+    currentSystemName.textContent = selectedSystem;
   }
 
   const navLinks = document.querySelectorAll('.nav-link:not(.nav-link-group .nav-link)');
@@ -24,13 +29,68 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const navUser = document.querySelector('.nav-user');
-  if (navUser) {
-    navUser.addEventListener('click', function() {
-      this.style.transform = 'scale(0.98)';
-      setTimeout(() => {
-        this.style.transform = 'scale(1)';
-      }, 150);
+  const navUser = document.getElementById('navUser');
+  const userDropdown = document.getElementById('userDropdown');
+
+  if (navUser && userDropdown) {
+    navUser.addEventListener('click', function(e) {
+      e.stopPropagation();
+      userDropdown.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!navUser.contains(e.target) && !userDropdown.contains(e.target)) {
+        userDropdown.classList.remove('active');
+      }
+    });
+
+    const userDropdownItems = userDropdown.querySelectorAll('.user-dropdown-item');
+    userDropdownItems.forEach(item => {
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        userDropdown.classList.remove('active');
+
+        if (this.classList.contains('logout')) {
+          if (confirm('هل تريد تسجيل الخروج؟')) {
+            window.location.href = 'index.html';
+          }
+        }
+      });
+    });
+  }
+
+  const systemSwitcherBtn = document.getElementById('systemSwitcherBtn');
+  const systemDropdown = document.getElementById('systemDropdown');
+
+  if (systemSwitcherBtn && systemDropdown) {
+    systemSwitcherBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      systemDropdown.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function(e) {
+      if (!systemSwitcherBtn.contains(e.target) && !systemDropdown.contains(e.target)) {
+        systemDropdown.classList.remove('active');
+      }
+    });
+
+    const systemDropdownItems = systemDropdown.querySelectorAll('.system-dropdown-item');
+    systemDropdownItems.forEach(item => {
+      item.addEventListener('click', function(e) {
+        const systemType = this.getAttribute('data-system');
+        const systemNames = {
+          accounting: 'نظام المحاسبة',
+          hr: 'نظام الموارد البشرية',
+          pos: 'نظام نقاط البيع',
+          crm: 'نظام إدارة العملاء',
+          projects: 'نظام إدارة المشاريع',
+          products: 'نظام إدارة المنتجات'
+        };
+
+        if (systemNames[systemType]) {
+          localStorage.setItem('selectedSystem', systemNames[systemType]);
+        }
+      });
     });
   }
 
@@ -85,16 +145,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const supportFab = document.getElementById('supportFab');
-  if (supportFab) {
+  const supportMenu = document.getElementById('supportMenu');
+
+  if (supportFab && supportMenu) {
     supportFab.addEventListener('click', function(e) {
       e.preventDefault();
+      e.stopPropagation();
+      supportMenu.classList.toggle('active');
+    });
 
-      this.style.transform = 'scale(0.9)';
-      setTimeout(() => {
-        this.style.transform = '';
-      }, 150);
+    document.addEventListener('click', function(e) {
+      if (!supportFab.contains(e.target) && !supportMenu.contains(e.target)) {
+        supportMenu.classList.remove('active');
+      }
+    });
 
-      alert('مرحباً! سيتم توجيهك إلى صفحة الدعم الفني.\n\nيمكنك التواصل معنا عبر:\n• البريد الإلكتروني: support@risanerp.com\n• الهاتف: +966 XX XXX XXXX\n• الدردشة المباشرة');
+    const supportOptions = supportMenu.querySelectorAll('.support-option');
+    supportOptions.forEach(option => {
+      option.addEventListener('click', function(e) {
+        e.preventDefault();
+        supportMenu.classList.remove('active');
+      });
     });
   }
 

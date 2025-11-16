@@ -4,7 +4,9 @@ const systemNames = {
   pos: 'نظام نقاط البيع',
   crm: 'نظام إدارة العملاء',
   projects: 'نظام إدارة المشاريع',
-  support: 'نظام الدعم الفني'
+  support: 'نظام الدعم الفني',
+  products: 'نظام إدارة المنتجات',
+  main: 'الداش بورد الرئيسية'
 };
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,16 +32,27 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   const supportFab = document.getElementById('supportFab');
-  if (supportFab) {
+  const supportMenu = document.getElementById('supportMenu');
+
+  if (supportFab && supportMenu) {
     supportFab.addEventListener('click', function(e) {
       e.preventDefault();
+      e.stopPropagation();
+      supportMenu.classList.toggle('active');
+    });
 
-      this.style.transform = 'scale(0.9)';
-      setTimeout(() => {
-        this.style.transform = '';
-      }, 150);
+    document.addEventListener('click', function(e) {
+      if (!supportFab.contains(e.target) && !supportMenu.contains(e.target)) {
+        supportMenu.classList.remove('active');
+      }
+    });
 
-      alert('مرحباً! سيتم توجيهك إلى صفحة الدعم الفني.\n\nيمكنك التواصل معنا عبر:\n• البريد الإلكتروني: support@risanerp.com\n• الهاتف: +966 XX XXX XXXX\n• الدردشة المباشرة');
+    const supportOptions = supportMenu.querySelectorAll('.support-option');
+    supportOptions.forEach(option => {
+      option.addEventListener('click', function(e) {
+        e.preventDefault();
+        supportMenu.classList.remove('active');
+      });
     });
   }
 });
