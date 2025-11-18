@@ -18,6 +18,7 @@
           suppliers: "الموردين",
           reports: "التقارير",
           more: "المزيد",
+          systemSettings: "إعدادات النظام",
         },
         reportsDropdown: {
           finance: {
@@ -192,6 +193,7 @@
           suppliers: "Suppliers",
           reports: "Reports",
           more: "More",
+          systemSettings: "System Settings",
         },
         reportsDropdown: {
           finance: {
